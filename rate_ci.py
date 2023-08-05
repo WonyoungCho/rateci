@@ -68,4 +68,4 @@ if len(valuelist) > 1:
         
     st.write(f'> Normal distribution: {rate*100000:.3f} ({(rate - 1.96*np.sqrt(rate*(1-rate)/pop))*100000:.3f} to {(rate + 1.96*np.sqrt(rate*(1-rate)/pop))*100000:.3f})')
 
-    st.write(f'> Poisson distribution: {rate*100000:.3f} ({(np.exp(np.log(rate) - 1.96*np.sqrt((1-rate)/case))*100000:.3f} to {(np.exp(np.log(rate) + 1.96*np.sqrt((1-rate)/case))*100000:.3f})')
+    st.write(f'> Poisson distribution: {rate*100000:.3f} ({np.exp(np.log(rate) - 1.96*np.sqrt((1-rate)/case))*100000:.3f} to {np.exp(np.log(rate) + 1.96*np.sqrt((1-rate)/case))*100000:.3f})')
