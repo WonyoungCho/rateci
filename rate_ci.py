@@ -62,6 +62,7 @@ if len(valuelist) > 1:
     df0 = pd.DataFrame(vdict0)
     df1 = pd.DataFrame(vdict1)
     df = pd.concat([df,df0], ignore_index=True)
+    df = pd.concat([df,df1], ignore_index=True)
     
     st.data_editor(df)
 
