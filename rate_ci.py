@@ -37,7 +37,7 @@ text-align: center;
 </style>
 
 <div class='footer'>
-<p> Copyright @ 2023 Center for Digital Health <a href="mailto:bourbaki10@gmail.com"> bourbaki10@gmail.com </a></p>
+<p> Copyright @ ycho <a href="mailto:bourbaki10@gmail.com"> bourbaki10@gmail.com </a></p>
 </div>
 """
 
