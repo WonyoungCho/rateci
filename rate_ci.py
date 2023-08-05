@@ -2,6 +2,47 @@ import pandas as pd
 import numpy as np
 import streamlit as st
 
+st.markdown(
+    """
+    <style>
+    .css-1jc7ptx, .e1ewe7hr3, .viewerBadge_container__1QSob,
+    .styles_viewerBadge__1yB5_, .viewerBadge_link__1S137,
+    .viewerBadge_text__1JaDK {
+        display: none;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+footerText = """
+<style>
+#MainMenu {
+visibility:hidden ;
+}
+
+footer {
+visibility : hidden ;
+}
+
+.footer {
+position: fixed;
+left: 0;
+bottom: 0;
+width: 100%;
+background-color: transparent;
+color: white;
+text-align: center;
+}
+</style>
+
+<div class='footer'>
+<p> Copyright @ 2023 Center for Digital Health <a href="mailto:bourbaki10@gmail.com"> bourbaki10@gmail.com </a></p>
+</div>
+"""
+
+st.markdown(str(footerText), unsafe_allow_html=True)
+
 df = pd.DataFrame(columns=['Population','Case','Rate','LCI','HCI','Info'])
 
 values = st.text_input('Input values')
