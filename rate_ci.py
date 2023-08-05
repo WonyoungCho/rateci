@@ -56,10 +56,11 @@ if len(valuelist) > 1:
     case = valuelist[1]
     rate = case/pop
 
-    vdict = {'Population':[pop],'Case':[case],'Rate': [f'{rate*100000:.2f}'], 'LCI': [f'{(rate - 1.96*np.sqrt(rate*(1-rate)/pop))*100000:.2f}'], 'HCI':[f'{(rate + 1.96*np.sqrt(rate*(1-rate)/pop))*100000:.2f}'], 'Info':[f'{rate*100000:.2f} ({(rate - 1.96*np.sqrt(rate*(1-rate)/pop))*100000:.2f} to {(rate + 1.96*np.sqrt(rate*(1-rate)/pop))*100000:.2f})']}
+    vdict0 = {'Population':[pop],'Case':[case],'Rate': [f'{rate*100000:.2f}'], 'LCI': [f'{(rate - 1.96*np.sqrt(rate*(1-rate)/pop))*100000:.2f}'], 'HCI':[f'{(rate + 1.96*np.sqrt(rate*(1-rate)/pop))*100000:.2f}'], 'Info':[f'{rate*100000:.2f} ({(rate - 1.96*np.sqrt(rate*(1-rate)/pop))*100000:.2f} to {(rate + 1.96*np.sqrt(rate*(1-rate)/pop))*100000:.2f})']}
+    vdict1 = {'Population':[pop],'Case':[case],'Rate': [f'{rate*100000:.2f}'], 'LCI': [f'{np.exp(np.log(rate) - 1.96*np.sqrt((1-rate)/case))*100000:.2f}'], 'HCI':[f'{np.exp(np.log(rate) + 1.96*np.sqrt((1-rate)/case))*100000:.2f}'], 'Info':[f'{rate*100000:.2f} ({np.exp(np.log(rate) - 1.96*np.sqrt((1-rate)/case))*100000:.2f} to {np.exp(np.log(rate) + 1.96*np.sqrt((1-rate)/case))*100000:.2f})']}
 
-    df0 = pd.DataFrame(vdict)
-    
+    df0 = pd.DataFrame(vdict0)
+    df1 = pd.DataFrame(vdict1)
     df = pd.concat([df,df0], ignore_index=True)
     
     st.data_editor(df)
