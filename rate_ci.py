@@ -23,7 +23,6 @@ if len(valuelist) > 1:
     
     st.data_editor(df)
 
-    st.write(f'{rate*100000:.3f} ({(rate - 1.96*np.sqrt(rate*(1-rate)/pop))*100000:.3f} to {(rate + 1.96*np.sqrt(rate*(1-rate)/pop))*100000:.3f})')
-
     st.write(f'{rate*100000:.2f} ({(rate - 1.96*np.sqrt(rate*(1-rate)/pop))*100000:.2f} to {(rate + 1.96*np.sqrt(rate*(1-rate)/pop))*100000:.2f})')
         
+    st.write(f'{rate*100000:.3f} ({(rate - 1.96*np.sqrt(rate*(1-rate)/pop))*100000:.3f} to {(rate + 1.96*np.sqrt(rate*(1-rate)/pop))*100000:.3f})')
